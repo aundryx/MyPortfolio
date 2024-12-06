@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <title>Portfolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+       
+        <style>
+            body
+           {
+            color: aliceblue;
+            background: #02101e;
+            font-family: 'Ubuntu', sans-serif;
+           }
+           .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            color: rgb(217, 204, 240);
+        }
+        .navbar {
+            position: fixed;
+            margin-left: 850px;
+        }
+        .navbar a {
+            color: rgb(217, 204, 240);
+            font-weight: 500;
+            text-decoration: none;
+            margin-left: 20px;
+            gap: 20px;
+        }
+        .navbar a:hover,
+        .navbar a.active {
+            color: rgb(90, 163, 212);
+        }
+    
+        .portfolio {
+            padding: 50px;
+            padding-top: 100px;
+        }
+        .project {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .project img {
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #D9CCF0;
+            display: block;
+        }
+        .project .description {
+            max-width: 600px;
+            margin-left: 20px;
+        }
+        .project .description h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .project .description p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #D9CCF0;
+        }
+
+        /* Alternate image and description positions */
+        .project:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .project:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <a href="{% url 'home-page' %}" class="logo">Kyle Aundry</a>
+            
+            <nav class="navbar">
+                <a href="{% url 'home-page' %}"> Home </a>
+                <a href="{% url 'portfolio-page' %}"> Portfolio </a>
+                <a href=""> Contact </a>
+            </nav>
+        </header>
+
+        <section class="portfolio" id="portfolio">
+            <div class="project">
+                <img src="{{ image1.image.url }}" alt="{{ image1.alt_text }}">
+                <div class="description">
+                    <h2>{{ text7.title }}</h2>
+                    <p>{{ text11.title }}</p>
+                </div>
+            </div>
+    
+            <div class="project">
+                <img src="{{ image2.image.url }}" alt="{{ image2.alt_text }}">
+                <div class="description">
+                    <h2>{{ text8.title }}</h2>
+                    <p>{{ text12.title }}</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="{{ image3.image.url }}" alt="{{ image3.alt_text }}">
+                <div class="description">
+                    <h2>{{ text9.title }}</h2>
+                    <p>{{ text13.title }}</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="{{ image4.image.url }}" alt=" {{ image4.alt_text}}">
+                <div class="description">
+                    <h2>{{ text10.title }}</h2>
+                    <p>{{ text14.title }}</p>
+                </div>
+            </div>
+    
+            
+    
+        </section>
+    
+        
+    </body>
+</html>
