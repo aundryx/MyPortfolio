@@ -5,88 +5,223 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+          
+        
        
         <style>
-            body
+           body
            {
-            color: aliceblue;
-            background: #02101e;
-            font-family: 'Ubuntu', sans-serif;
+          
+                color: aliceblue;
+                background: #02101e;
+                font-family: 'Ubuntu', sans-serif;
            }
-           .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 10%;
-            background: transparent;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-        }
-        .logo {
-            font-size: 20px;
-            font-weight: 600;
-            text-decoration: none;
-            color: rgb(217, 204, 240);
-        }
-        .navbar {
-            position: fixed;
-            margin-left: 850px;
-        }
-        .navbar a {
-            color: rgb(217, 204, 240);
-            font-weight: 500;
-            text-decoration: none;
-            margin-left: 20px;
-            gap: 20px;
-        }
-        .navbar a:hover,
-        .navbar a.active {
-            color: rgb(90, 163, 212);
-        }
-    
-        .portfolio {
-            padding: 50px;
-            padding-top: 100px;
-        }
-        .project {
-            display: flex;
-            align-items: center;
-            margin-bottom: 50px;
-        }
-        .project img {
-            max-width: 400px;
-            height: auto;
-            border-radius: 10px;
-            border: 2px solid #D9CCF0;
-            display: block;
-        }
-        .project .description {
-            max-width: 600px;
-            margin-left: 20px;
-        }
-        .project .description h2 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        .project .description p {
-            font-size: 16px;
-            line-height: 1.5;
-            color: #D9CCF0;
-        }
 
-        /* Alternate image and description positions */
-        .project:nth-child(odd) {
-            flex-direction: row;
-        }
+           .header 
+           {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 20px 10%;
+                background: transparent;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 100;
+           }
 
-        .project:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        
+           .logo 
+           {
+                font-size: 20px;
+                font-weight: 600;
+                text-decoration: none;
+                color: rgb(217, 204, 240);
+           }
+
+           .navbar 
+           {
+                position: fixed;
+                margin-left: 850px;
+           }
+
+           .navbar a 
+           {
+                color: rgb(217, 204, 240);
+                font-weight: 500;
+                text-decoration: none;
+                margin-left: 20px;
+                gap: 20px;
+           }
+
+           .navbar a:hover,
+           .navbar a.active 
+           {
+                color: rgb(90, 163, 212);
+           }
+
+           .dropdown 
+           {
+                margin-left: 17px;
+                position: relative;
+                display: inline-block;
+           }
+
+           .dropdown span 
+           {
+                color: rgb(217, 204, 240);
+                font-size: 16px;
+                cursor: pointer;
+           }
+
+           .dropdown:hover .dropdown-content
+           {
+               display: block;
+           }
+
+           .dropdown-content 
+           {
+                margin-top: 20px;
+                display: none; 
+                position: absolute;
+                background-color: transparent; 
+                border-radius: 20px;
+                box-shadow: 0px 8px 16px rgb(217, 204, 240);
+                padding: 15px;
+                left: 32px;
+                transform: translateX(-50%);
+                z-index: 1;
+                align-items:center ;
+           }
+
+           .dropdown-content p 
+           {
+                margin: 10px 0;
+                font-size: 14px;
+                color:  rgb(217, 204, 240);
+                line-height: 1.5;
+           }
+
+           .dropdown:focus-within .dropdown-content
+           {
+               display: block;
+           }
+
+           .dropdown:focus-within
+           {
+               outline: none;
+               border: 2px solid rgb(90, 163, 212);
+           }
+
+           .portfolio 
+           {
+                padding: 50px;
+                margin-top: 160px;
+           }
+           .portfolio h1
+           {
+               font-size: 25px;
+               position: absolute;
+               color: rgb(217, 204, 240);
+               left: 707px;
+               bottom: 570px;
+               
+           }
+          
+
+           .project 
+           {
+                display: flex;
+                align-items: center;
+                margin-bottom: 50px;
+                margin-top: 20px;
+           }
+
+           .project img 
+           {
+                max-width: 400px;
+                height: auto;
+                border-radius: 10px;
+                border: 2px solid rgb(217, 204, 240);
+                transition: filter 0.5s ease-in-out;
+           }
+                         
+           .project .description 
+           {
+                margin-left: 25px;
+                margin-right: 25px;
+                max-width: 600px;
+           }
+
+           .project .description h2 
+           {
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                color:  rgb(217, 204, 240);
+           }
+
+           .project .description p 
+           {
+                font-size: 16px;
+                line-height: 1.5;
+                color:  rgb(217, 204, 240);
+           }
+
+           .project:nth-child(even) 
+           {
+                flex-direction: row;
+           }
+
+           .project:nth-child(odd) 
+           {
+                flex-direction: row-reverse;
+           }
+
+           .tools 
+           {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 50px; 
+                justify-items: center; 
+                padding: 100px;
+            }
+
+            .tools h1 
+            {
+                grid-column: span 5; 
+                text-align: center;
+                margin-bottom: 30px;
+                margin-top: 50px;
+                font-size: 30px; 
+                color: rgb(217, 204, 240);
+            }
+
+            .tools img 
+            {
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.1);
+                border: none;
+                border-radius: 20px; 
+                padding: 15px;
+            }
+
+            .tools img:hover 
+            {
+                transform: scale(1.1);
+                background-color: rgb(217, 204, 240); 
+            }
+            
+            .tool-section
+            {
+                background-color: rgb(30, 27, 52);
+               
+            }
 
         </style>
     </head>
@@ -96,12 +231,22 @@
             
             <nav class="navbar">
                 <a href="{% url 'home-page' %}"> Home </a>
-                <a href="{% url 'portfolio-page' %}"> Portfolio </a>
-                <a href=""> Contact </a>
+                <a href="{% url 'portfolio-page' %}"> Portfolio</a>
+                <div class="dropdown">
+                    <span> Contact </span>
+                    <div class="dropdown-content">
+                        <p><i class='bx bxl-gmail'></i> Gmail: kyleaundry15@gmail.com</p>
+                        <p><i class='bx bxs-phone' style='color:#ffffff' ></i> Phone number: 09637188563 </p>
+                    </div>
+                </div>
             </nav>
         </header>
 
-        <section class="portfolio" id="portfolio">
+
+        
+        <section class="portfolio" id="myproj">
+            <h1> My Projects </h1>
+
             <div class="project">
                 <img src="{{ image1.image.url }}" alt="{{ image1.alt_text }}">
                 <div class="description">
@@ -118,26 +263,45 @@
                 </div>
             </div>
 
-            <div class="project">
-                <img src="{{ image3.image.url }}" alt="{{ image3.alt_text }}">
-                <div class="description">
+            <div class="project">              
+                <img src="{{ image3.image.url }}" alt="{{ image3.alt_text }}">   
+                <div class="description">                
                     <h2>{{ text9.title }}</h2>
                     <p>{{ text13.title }}</p>
                 </div>
             </div>
 
-            <div class="project">
-                <img src="{{ image4.image.url }}" alt=" {{ image4.alt_text}}">
+            <div class="project">             
+                <img src="{{ image4.image.url }}" alt="{{ image4.alt_text}}">
                 <div class="description">
                     <h2>{{ text10.title }}</h2>
                     <p>{{ text14.title }}</p>
                 </div>
             </div>
-    
-            
-    
         </section>
-    
+
+        <div class="tool-section">
+            <div class="tools">
+                <h1> Tools </h1>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original-wordmark.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg" />
+            </div>
+        </div>
+
+        
+
+        
         
     </body>
 </html>

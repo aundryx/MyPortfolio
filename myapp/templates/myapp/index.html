@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyle Aundry</title>
+    <title> Me </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
-        body {
+        body 
+        {
             color: aliceblue;
             background: #02101e;
             font-family: 'Ubuntu', sans-serif;
@@ -18,7 +17,8 @@
             height: 100vh;
             width: 100vw;
         }
-        .header {
+        .header 
+        {
             position: fixed;
             top: 0;
             left: 0;
@@ -30,17 +30,20 @@
             align-items: center;
             z-index: 100;
         }
-        .logo {
+        .logo 
+        {
             font-size: 20px;
             font-weight: 600;
             text-decoration: none;
             color: rgb(217, 204, 240);
         }
-        .navbar {
+        .navbar 
+        {
             position: fixed;
             margin-left: 850px;
         }
-        .navbar a {
+        .navbar a 
+        {
             color: rgb(217, 204, 240);
             font-weight: 500;
             text-decoration: none;
@@ -48,42 +51,50 @@
             gap: 20px;
         }
         .navbar a:hover,
-        .navbar a.active {
+        .navbar a.active 
+        {
             color: rgb(90, 163, 212);
         }
-        .home {
+        .home 
+        {
             
             height: 100vh;
             display: flex;
             align-items: center;
             padding: 0 10%;
         }
-        .home-content {
+        .home-content 
+        {
+            position: fixed;
             max-width: 600px;
             color: rgb(217, 204, 240);
-            margin-bottom: 130px;
+            margin-bottom: 180px;
             margin-top: 180px;
             margin-left: 50px;
         }
-        .home-content h1 {
+        .home-content h1 
+        {
             font-weight: 600;
         }
-        .home-content h3 {
+        .home-content h3 
+        {
             font-size: 18px;
             color: rgb(98, 98, 192);
             font-weight: bolder;
         }
-        .home-soc {
-            position: absolute;
+        .home-soc 
+        {
+            position: fixed;
             margin-left: 1005px;
-            margin-bottom: 110px;
-            bottom: 40px;
+            bottom: 170px;
             width: 170px;
             display: flex;
             justify-content: space-between;
             gap: 7px;
+            z-index: 10;
         }
-        .home-soc a {
+        .home-soc a 
+        {
             position: relative;
             display: inline-flex;
             justify-content: center;
@@ -99,7 +110,8 @@
             z-index: 1;
             overflow: hidden;
         }
-        .home-soc a::before {
+        .home-soc a::before 
+        {
             content: '';
             position: absolute;
             top: 0;
@@ -110,20 +122,24 @@
             z-index: -1;
             transition: 0.5s;
         }
-        .home-soc a:hover::before {
+        .home-soc a:hover::before 
+        {
             width: 100%;
         }
-        .pic {
+        .pic 
+        {
             display: flex;
             justify-content: center;
             align-items: center;
-            position: absolute;
+            position: fixed;
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 5;
         }
-        .pic img {
+        .pic img 
+        {
+            margin-bottom: 50px;
             margin-right: 240px;
             border-radius: 40%;
             height: 300px;
@@ -179,45 +195,93 @@
             color: rgb(255, 255, 255); 
         }
 
-        
+        .dropdown 
+        {
+            margin-left: 17px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown span 
+        {
+            color: rgb(217, 204, 240);
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .dropdown-content 
+        {
+            margin-top: 20px;
+            display: none; 
+            position: absolute;
+            background-color: transparent; 
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgb(217, 204, 240);
+            padding: 15px;
+            left:32px;
+            transform: translateX(-50%);
+            z-index: 10;
+            align-items:center ;
+            
+        }
+
+        .dropdown-content p 
+        {
+            margin: 10px 0;
+            font-size: 14px;
+            color:  rgb(217, 204, 240);
+            line-height: 1.5;
+        }
+
+        .dropdown:hover .dropdown-content 
+        {
+            display: block; 
+        }
     </style>
 </head>
 <body>
 
-<header class="header">
-    <a href="{% url 'home-page' %}" class="logo">Kyle Aundry</a>
-    
-    <nav class="navbar">
-        <a href="{% url 'home-page' %}">Home</a>
-        <a href="{% url 'portfolio-page' %}">Portfolio</a>
-        <a href="">Contact</a>
-    </nav>
-</header>
+    <header class="header">
+        <a href="{% url 'home-page' %}" class="logo">Kyle Aundry</a>
+        
+        <nav class="navbar">
+            <a href="{% url 'home-page' %}">Home</a>
+            <a href="{% url 'portfolio-page' %}">Portfolio</a>
+            <div class="dropdown">
+                <span> Contact </span>
+                <div class="dropdown-content">
+                    <p><i class='bx bxl-gmail'></i> Gmail: kyleaundry15@gmail.com</p>
+                    <p><i class='bx bxs-phone' style='color:#ffffff' ></i> Phone number: 09637188563 </p>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<div class="pic">
-    <img src="{{ image.image.url }}" alt="{{ image.alt_text }}">
-</div>
-
-<section class="home">
-    <div class="home-content">
-        <h1>{{ text.title }}</h1>
-        <h3>{{ text3.title }}</h3>
-        <p style="letter-spacing: 1px;">{{ text2.title }}</p>
-        <p style="letter-spacing: 1px;">{{ text5.title }}</p>
-        <button> <a href="{% url 'portfolio-page' %}"> My Projects <i class='bx bx-right-arrow-alt'></i> </a> </button>
+    <div class="pic">
+        <img src="{{ image.image.url }}" alt="{{ image.alt_text }}">
     </div>
-</section>
 
-<div class="home-soc">
-    <a href="{{ facebook.links }}"><i class='bx bxl-facebook' style='color:#ffffff'></i></a>
-    <a href=""><i class='bx bxl-linkedin' style='color:#ffffff'></i></a>
-    <a href="{{ gmail.links }}"><i class='bx bxl-gmail' style='color:#ffffff'></i></a>
-    <a href="{{ github.links }}"><i class='bx bxl-github' style='color:#ffffff'></i></a>
-</div>
 
-<span class="img-my">
-    <img src="" alt="">
-</span>
+    <section class="home">
+        <div class="home-content">
+            <h1>{{ text.title }}</h1>
+            <h3>{{ text3.title }}</h3>
+            <p style="letter-spacing: 1px;">{{ text15.title }}</p>
+            <p style="letter-spacing: 1px;">{{ text5.title }}</p>
+            <button> <a href="{% url 'portfolio-page' %}"> My Projects <i class='bx bx-right-arrow-alt'></i> </a> </button>
+        </div>
+    </section>
+
+    <div class="home-soc">
+        <a href="{{ facebook.links }}"><i class='bx bxl-facebook' style='color:#ffffff'></i></a>
+        <a href="{{ linkedin.links }}"><i class='bx bxl-linkedin' style='color:#ffffff'></i></a>
+        <a href="{{ gmail.links }}"><i class='bx bxl-gmail' style='color:#ffffff'></i></a>
+        <a href="{{ github.links }}"><i class='bx bxl-github' style='color:#ffffff'></i></a>
+    </div>
+
+    <span class="img-my">
+        <img src="" alt="">
+    </span>
 
 </body>
 </html>

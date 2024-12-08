@@ -53,7 +53,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'django_app.urls'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://d8hhwumx-j8ouxgns-mgmfcihp1y1c.ac3-preview.marscode.dev',
+    'https://k76c99z6-x49bcbpy-zooiwr6n1l00.ac3-preview.marscode.dev',
     
 ]
 
